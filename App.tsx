@@ -6,44 +6,28 @@
  */
 
 import React, {useRef} from 'react';
-import { GameEngine } from 'react-native-game-engine';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  View,
 } from 'react-native';
-import Constants from './src/constants/Constants';
+import { NavigationContainer } from '@react-navigation/native';
+import { navigationRef } from './src/routes/RootNavigation';
+import Routes from './src/routes';
 
 function App(): JSX.Element {
-  const BoardSize = Constants.GRID_SIZE * Constants.CELL_SIZE;
-  const engine = useRef(null);
+  
   return (
-    <SafeAreaView style={styles.canvas} >
-      <View>
-        <GameEngine
-          ref={engine}
-          style={styles.gameEngine}
-        />
-      </View>
+    <SafeAreaView style={styles.container} >
+      <NavigationContainer ref={navigationRef}>
+        <Routes />
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  canvas: {
+  container: {
     flex: 1,
-    backgroundColor: '#000000',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  gameEngine: {
-    width: BoardSize,
-    height: BoardSize,
-    flex: null,
-    backgroundColor: 'white',
   },
 });
 
