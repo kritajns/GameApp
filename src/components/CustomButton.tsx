@@ -1,26 +1,27 @@
 import {
   View,
   Text,
-  TouchableNativeFeedback,
+  TouchableOpacity,
   StyleSheet,
   TextStyle,
 } from 'react-native';
 import React from 'react';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 interface BtnProps {
   title: string;
-  style: TextStyle;
-  color: any;
-  onPress: () => void;
+  style?: TextStyle;
+  color?: any;
+  onPress?: () => void;
 }
 
 const CustomButton: React.FC<BtnProps> = ({title, style, color, onPress}) => {
   return (
-    <TouchableNativeFeedback
+    <TouchableOpacity
       onPress={onPress}
       style={{...styles.btnStyle, ...style}}>
-      <Text style={{color: color}}>{title}</Text>
-    </TouchableNativeFeedback>
+      <Text style={styles.btnText}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -29,9 +30,19 @@ const styles = StyleSheet.create({
   btnStyle: {
     padding: 15,
     alignSelf: 'center',
-    width: '90%',
+    // marginHorizontal: wp(10),
+    width: '100%',
+    height: '8%',
     borderWidth: 1,
-    borderRadius: 20,
+    backgroundColor: 'white',
+    borderColor: 'blue',
+    borderRadius: 30,
+  },
+  btnText: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'blue',
   },
 });
 
