@@ -14,7 +14,7 @@ const Home: React.FC<IProps> = ({navigation}) => {
         <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
         <CustomIcon library="MaterialIcons" name="settings" size={30} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Awards')}>
         <CustomIcon library="AntDesign" name="Trophy" size={30} />
         </TouchableOpacity>
       </View>
