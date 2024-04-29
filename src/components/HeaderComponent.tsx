@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-native';
 import React from 'react';
 import {CustomIcon} from './CustomIcon';
 import {goBack} from '../routes/RootNavigation';
@@ -11,30 +11,27 @@ interface HProps {
 
 const HeaderComponent: React.FC<HProps> = ({navigation, title, children}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
         <TouchableOpacity onPress={() => goBack()}>
           <CustomIcon
             library="MaterialCommunityIcons"
-            name="auto-download"
+            name="arrow-left"
             size={25}
           />
         </TouchableOpacity>
         <Text style={styles.titleText}>{title}</Text>
         <View></View>
       </View>
-
-      {/* <View>{children}</View> */}
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 20,
-    paddingHorizontal: 15,
-    backgroundColor: 'white',
+    paddingHorizontal: 10,
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 15,
   },
   titleText: {
     fontSize: 18,

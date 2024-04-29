@@ -2,6 +2,7 @@ import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Octicons from 'react-native-vector-icons/Octicons';
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -15,6 +16,7 @@ const iconLibraries: any = {
   MaterialCommunityIcons,
   MaterialIcons,
   Entypo,
+  Octicons,
   Feather,
   FontAwesome,
   Fontisto,
@@ -35,5 +37,5 @@ export const CustomIcon: React.FC<IconProps> = ({
   size,
 }) => {
   const IconComponent = iconLibraries[library];
-  return <IconComponent name={name} size={size} color={color ?? 'black'} />;
+  return <IconComponent name={name} size={size} color={color ? color : 'black'} />;
 };
