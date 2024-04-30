@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   text: {
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: 'bold',
     textAlign: 'center',
     textTransform: 'uppercase',
