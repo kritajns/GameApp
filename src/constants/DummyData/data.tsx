@@ -1,0 +1,17 @@
+export const strategiesData = [
+  'Last Blank Cell',
+  'Last Remaining Cell',
+  'Single Candidate',
+  'Naked Pair',
+  'Intersection removal',
+  'Hidden Pair',
+  'Naked Triplet',
+  'Hidden Triplet',
+  'Naked Quad',
+  'XY-Wing',
+  'X-Wing',
+  'Swordfish',
+  'Simple Coloring',
+  'XYZ-Wing',
+  'XCycle',
+];
