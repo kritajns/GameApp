@@ -4,7 +4,7 @@ import CustomButton from '../../components/CustomButton';
 import {CustomIcon} from '../../components/CustomIcon';
 
 interface IProps {
-    navigation: any;
+  navigation: any;
 }
 
 const Home: React.FC<IProps> = ({navigation}) => {
@@ -12,10 +12,10 @@ const Home: React.FC<IProps> = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-        <CustomIcon library="MaterialIcons" name="settings" size={30} />
+          <CustomIcon library="MaterialIcons" name="settings" size={30} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Awards')}>
-        <CustomIcon library="AntDesign" name="Trophy" size={30} />
+          <CustomIcon library="AntDesign" name="Trophy" size={30} />
         </TouchableOpacity>
       </View>
       <Text style={styles.text}>SUDOKU</Text>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   text: {
-    fontSize: 36,
+    fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     textTransform: 'uppercase',
